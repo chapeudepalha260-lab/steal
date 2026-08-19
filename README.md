@@ -4,7 +4,7 @@ end)
 if not sucesso then
     warn("ERRO: Seu README.md não tem código. Erro: "..tostring(OrionLib))
     -- GUI DE BACKUP CASO O SEU FALHE
-    OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+    OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/chapeudepalha260-lab/steal/refs/heads/main/README.md"))()
 end
 
 local Window = OrionLib:MakeWindow({
