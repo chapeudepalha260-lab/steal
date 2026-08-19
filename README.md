@@ -1,24 +1,20 @@
--- SUA LIB AQUI
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/chapeudepalha260-lab/steal/refs/heads/main/README.md"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/chapeudepalha260-lab/steal/refs/heads/main/README.md"))()
+end)
+
+if not sucesso then
+    warn("ERRO: Seu README.md não tem código. Erro: "..tostring(OrionLib))
+    -- GUI DE BACKUP CASO O SEU FALHE
+    OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+end
+
 local Window = OrionLib:MakeWindow({
     Name = "Steal Base PRO", 
     HidePremium = false, 
     SaveConfig = true
 })
 
+local Tab = Window:AddTab({Name = "🔥Farm"})
 local plr = game.Players.LocalPlayer
-getgenv().AutoRoubar = false
-
--- ABA
-local Tab = Window:AddTab({Name = "🚀Farm"})
-
-Tab:AddToggle({
-    Name = "Auto Roubar + TP Base",
-    Default = false,
-    Callback = function(v)
-        getgenv().AutoRoubar = v
-    end
-})
 
 Tab:AddButton({
     Name = "TP Minha Base",
@@ -30,14 +26,5 @@ Tab:AddButton({
         end
     end
 })
-
--- LOOP
-task.spawn(function()
-    while task.wait(0.3) do
-        if getgenv().AutoRoubar then
-            -- aqui você coloca o resto do farm
-        end
-    end
-end)
 
 OrionLib:Init()
